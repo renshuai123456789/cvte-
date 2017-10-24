@@ -23,7 +23,6 @@ public class blackpeopleImp implements blackpeople {
         Date startdate=people.getStartime();
         Date lasttime=people.getLasttime();
         long minute=lasttime.getTime()-startdate.getTime();
-        if()
 
     }
 }
