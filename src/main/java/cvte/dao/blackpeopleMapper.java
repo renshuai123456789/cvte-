@@ -8,4 +8,9 @@ public interface blackpeopleMapper {
 
     public blackpeople getPeople(int id);
 
+    public void updatePeople(blackpeople p);
+
+    public void insertPeople(blackpeople p);
+
+    public void delete(int id);
 }

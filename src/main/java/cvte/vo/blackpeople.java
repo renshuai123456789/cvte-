@@ -1,33 +1,12 @@
 package cvte.vo;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class blackpeople {
     int id;
     int userid;
-    Date startime;
+    Date starttime;
     Date lasttime;
-
-    public blackpeople() {
-    }
-
-    public blackpeople(int id, int userid, Date startime, Date lasttime) {
-
-        this.id = id;
-        this.userid = userid;
-        this.startime = startime;
-        this.lasttime = lasttime;
-    }
-
-    @Override
-    public String toString() {
-        return "blackpeople{" +
-                "id=" + id +
-                ", userid=" + userid +
-                ", startime=" + startime +
-                ", lasttime=" + lasttime +
-                '}';
-    }
 
     public int getId() {
         return id;
@@ -45,12 +24,12 @@ public class blackpeople {
         this.userid = userid;
     }
 
-    public Date getStartime() {
-        return startime;
+    public Date getStarttime() {
+        return starttime;
     }
 
-    public void setStartime(Date startime) {
-        this.startime = startime;
+    public void setStarttime(Date starttime) {
+        this.starttime = starttime;
     }
 
     public Date getLasttime() {
@@ -58,6 +37,34 @@ public class blackpeople {
     }
 
     public void setLasttime(Date lasttime) {
+        this.lasttime = lasttime;
+    }
+
+    @Override
+    public String toString() {
+        return "blackpeople{" +
+                "id=" + id +
+                ", userid=" + userid +
+                ", starttime=" + starttime +
+                ", lasttime=" + lasttime +
+                '}';
+    }
+
+    public blackpeople(int userid, Date starttime, Date lasttime) {
+        this.userid = userid;
+        this.starttime = starttime;
+        this.lasttime = lasttime;
+    }
+
+    public blackpeople() {
+
+    }
+
+    public blackpeople(int id, int userid, Date starttime, Date lasttime) {
+
+        this.id = id;
+        this.userid = userid;
+        this.starttime = starttime;
         this.lasttime = lasttime;
     }
 }

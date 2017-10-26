@@ -4,8 +4,25 @@
 
      <select id="getPeople"  parameterType="int" resultType="cvte.vo.blackpeople">
 
-         select *from blackpeople where id=#{id};
+         select * from blackpeople where userid=#{id};
 
      </select>
+
+    <update id="updatePeople" parameterType="cvte.vo.blackpeople" >
+
+        update blackpeople set userid=#{userid},starttime=#{starttime},lasttime=#{lasttime} where userid=#{userid};
+
+    </update>
+
+    <insert id="insertPeople" parameterType="cvte.vo.blackpeople" >
+
+        insert into blackpeople (userid,starttime,lasttime) values (#{userid},#{starttime},#{lasttime});
+
+    </insert>
+
+    <delete id="delete" parameterType="int">
+        delete from blackpeople where userid=#{id};
+    </delete>
+
 
 </mapper>

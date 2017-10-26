@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cvte.dao.cvteurlMapper" >
+
+  <insert id="insert" parameterType="cvte.vo.cvte_url"  >
+      insert into cvte_url (long_url,short_url,date) values (#{long_url},#{short_url},#{date});
+  </insert>
+
+    <select id="selectByLongUrl" parameterType="String" resultType="cvte.vo.cvte_url">
+        select *from cvte_url where long_url=#{longurl};
+    </select>
+
+    <select id="selectByShortUrl" parameterType="String" resultType="cvte.vo.cvte_url">
+        select *from cvte_url where short_url=#{shorturl};
+    </select>
+</mapper>

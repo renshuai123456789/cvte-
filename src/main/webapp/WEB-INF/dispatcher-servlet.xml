@@ -44,5 +44,16 @@
         <property name="defaultEncoding" value="UTF-8"></property>
     </bean>
 
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="*.jsp"></mvc:mapping>
+            <mvc:mapping path="/**/*.ll"></mvc:mapping>
+            <mvc:mapping path="/**/*.jsp"/><!-- 拦截后缀为.aspx的请求 -->
+            <mvc:mapping path="/**/*.do"/><!-- 拦截后缀为 .do的请求 -->
+
+            <bean class="cvte.Handler.userHandler"></bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
 
 </beans>

@@ -7,20 +7,8 @@ public class cvte_user {
     String realname;
     String pwd;
     String phone;
+    int power;
     int delete1;
-
-    public cvte_user() {
-    }
-
-    public cvte_user(int id, String username, String realname, String pwd, String phone, int delete1) {
-
-        this.id = id;
-        this.username = username;
-        this.realname = realname;
-        this.pwd = pwd;
-        this.phone = phone;
-        this.delete1 = delete1;
-    }
 
     @Override
     public String toString() {
@@ -30,7 +18,8 @@ public class cvte_user {
                 ", realname='" + realname + '\'' +
                 ", pwd='" + pwd + '\'' +
                 ", phone='" + phone + '\'' +
-                ", delete=" + delete1 +
+                ", power=" + power +
+                ", delete1=" + delete1 +
                 '}';
     }
 
@@ -74,19 +63,43 @@ public class cvte_user {
         this.phone = phone;
     }
 
+    public int getPower() {
+        return power;
+    }
+
+    public void setPower(int power) {
+        this.power = power;
+    }
+
     public int getDelete1() {
         return delete1;
     }
 
-    public void setDelete1(int delete) {
-        this.delete1 = delete;
+    public void setDelete1(int delete1) {
+        this.delete1 = delete1;
     }
 
-    public cvte_user(String username, String realname, String pwd, String phone, int delete1) {
+    public cvte_user(String username, String realname, String pwd, String phone, int power, int delete1) {
+
         this.username = username;
         this.realname = realname;
         this.pwd = pwd;
         this.phone = phone;
+        this.power = power;
+        this.delete1 = delete1;
+    }
+
+    public cvte_user() {
+    }
+
+    public cvte_user(int id, String username, String realname, String pwd, String phone, int power, int delete1) {
+
+        this.id = id;
+        this.username = username;
+        this.realname = realname;
+        this.pwd = pwd;
+        this.phone = phone;
+        this.power = power;
         this.delete1 = delete1;
     }
 }

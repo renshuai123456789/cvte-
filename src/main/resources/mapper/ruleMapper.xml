@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cvte.dao.ruleMapper" >
+  <select id="getRule"  resultType="cvte.pojo.cvte_rule" >
+
+      select * from cvte_rule;
+
+  </select>
+
+    <update id="updateRule1" >
+        update cvte_rule set rulelooknum=#{rulelooknum};
+    </update>
+
+    <update id="updateRule2" >
+        update cvte_rule set ruletime=#{ruletime} ,rulenum=#{rulenum};
+    </update>
+</mapper>

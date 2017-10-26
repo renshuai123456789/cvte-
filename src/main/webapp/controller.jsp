@@ -4,7 +4,7 @@
 <html>
 
 <head>
-    <title>注册</title>
+    <title>控制</title>
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="cache-control" content="no-cache">
     <meta http-equiv="expires" content="0">
@@ -45,6 +45,8 @@
         <ul class="nav nav-tabs">
             <ul class="nav nav-tabs">
                 <li role="presentation" ><a href="${pageContext.request.contextPath }/login.jsp">欢迎来到长短链服务器</a></li>
+                <form action="/gotorule.do"  method="get"><input type="submit" value="点击此处跳转到管理页面">点击此处跳转到管理页面</form>
+
             </ul>
         </ul>
     </div>
@@ -55,16 +57,14 @@
               align="center">
 
             <br />
-
             <div class="form-group" align="center">
-                <label class="col-sm-2 control-label" for="firstname" id="must">*&nbsp;输入所要跳转的网址：</label>
+                <label class="col-sm-2 control-label" for="question">&nbsp;输入所要跳转的网址：（不要连续点击，否则会加入给黑名单的）</label>
                 <div class="col-sm-5">
-                    <input class="form-control" id="urlchange" name="username"
-                           placeholder="请输入要转换的网址"  />
+                    <input class="form-control" id="urlchange" name="question"
+                           placeholder="请输入所要跳转的网址" />
                 </div>
             </div>
-
-
+            <br />
             <div class="form-group" align="middle">
                 <div class="col-md-offset-2 col-md-5">
                     <button type="button"  id="signin" class="btn btn-success btn-sm">提交</button>
@@ -79,9 +79,11 @@
 <script type="text/javascript">
     $("#signin").click(function(){
 
+
+
         var name=$("#urlchange");
         $.ajax({
-            url:"/sign.do",
+            url:"/getService.do",
             type:"post",
             dataType:"json",
             cache: false,
@@ -90,11 +92,7 @@
                 "url":name.val()
             },
             success:function(data){
-                if(data){
-                    $(window).attr('location','/success.jsp');
-                }else{
-                    $(window).attr('location','/login.jsp');
-                }
+                $("#urlchange").val(data);
             }
         });
     })

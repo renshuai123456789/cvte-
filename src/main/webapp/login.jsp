@@ -157,7 +157,7 @@ width:500px;
                         $(window).attr('location','/success.jsp');
 					}else{
 
-                        $(window).attr('location','/login.jsp');
+                        $(window).attr('location','/failure.jsp');
 					}
             	}
 			});

@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cvte.dao.userMapper" >
   <insert id="insertuser" parameterType="cvte.vo.cvte_user">
-    insert into cvte_user (username,realname,pwd,phone,delete1) values(#{username},#{realname},#{pwd},#{phone},#{delete1});
+    insert into cvte_user (username,realname,pwd,phone,power,delete1) values(#{username},#{realname},#{pwd},#{phone},#{power},#{delete1});
   </insert>
 
   <select id="selectOne" parameterType="int" resultType="cvte.vo.cvte_user" >
@@ -13,7 +13,5 @@
     select *from cvte_user where username=#{name} and pwd=#{pwd};
   </select>
 
-  <select id="insertTest" parameterType="String" >
-    insert into cvte (username) values(#{username});
-  </select>
+
 </mapper>
