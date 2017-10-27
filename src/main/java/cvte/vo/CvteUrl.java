@@ -2,19 +2,19 @@ package cvte.vo;
 
 import java.util.Date;
 
-public class cvte_url {
+public class CvteUrl {
 
     int id;
     String long_url;
     String short_url;
     Date date;
 
-    public cvte_url() {
+    public CvteUrl() {
     }
 
     @Override
     public String toString() {
-        return "cvte_url{" +
+        return "CvteUrl{" +
                 "id=" + id +
                 ", long_url='" + long_url + '\'' +
                 ", short_url='" + short_url + '\'' +
@@ -54,14 +54,14 @@ public class cvte_url {
         this.date = date;
     }
 
-    public cvte_url(String long_url, String short_url, Date date) {
+    public CvteUrl(String long_url, String short_url, Date date) {
 
         this.long_url = long_url;
         this.short_url = short_url;
         this.date = date;
     }
 
-    public cvte_url(int id, String long_url, String short_url, Date date) {
+    public CvteUrl(int id, String long_url, String short_url, Date date) {
 
         this.id = id;
         this.long_url = long_url;

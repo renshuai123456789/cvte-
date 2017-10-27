@@ -1,10 +1,10 @@
 
 package cvte.controller;
 
-import cvte.service.serviceImp.blackpeopleImp;
-import cvte.service.serviceImp.urlSerciceImp;
-import cvte.vo.blackpeople;
-import cvte.vo.cvte_user;
+import cvte.service.BlackListService;
+import cvte.service.UrlService;
+import cvte.service.serviceImp.BlackListImpl;
+import cvte.service.serviceImp.UrlSerciceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,17 +13,16 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.Date;
 
 @Controller
-public class longtoshort {
+public class LongToShort {
 
 
     @Autowired
-    blackpeopleImp people;
+    BlackListService people;
 
     @Autowired
-    urlSerciceImp imp;
+    UrlService urlService;
 
 
     @RequestMapping(value = "getService.do" ,method = RequestMethod.POST)
@@ -41,10 +40,10 @@ public class longtoshort {
             /*
             短链服务
              */
-            System.out.println("从这里开始了端服务");
-             return imp.urlShortChange(url,session,request);
+
+             return urlService.urlShortChange(url,session,request);
         }else {
-            return imp.urlChange(url, session, request);
+            return urlService.urlChange(url, session, request);
         }
     }
 

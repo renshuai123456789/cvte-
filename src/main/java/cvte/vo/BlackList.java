@@ -2,7 +2,7 @@ package cvte.vo;
 
 import java.util.Date;
 
-public class blackpeople {
+public class BlackList {
     int id;
     int userid;
     Date starttime;
@@ -42,7 +42,7 @@ public class blackpeople {
 
     @Override
     public String toString() {
-        return "blackpeople{" +
+        return "BlackList{" +
                 "id=" + id +
                 ", userid=" + userid +
                 ", starttime=" + starttime +
@@ -50,17 +50,17 @@ public class blackpeople {
                 '}';
     }
 
-    public blackpeople(int userid, Date starttime, Date lasttime) {
+    public BlackList(int userid, Date starttime, Date lasttime) {
         this.userid = userid;
         this.starttime = starttime;
         this.lasttime = lasttime;
     }
 
-    public blackpeople() {
+    public BlackList() {
 
     }
 
-    public blackpeople(int id, int userid, Date starttime, Date lasttime) {
+    public BlackList(int id, int userid, Date starttime, Date lasttime) {
 
         this.id = id;
         this.userid = userid;

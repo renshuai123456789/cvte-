@@ -1,14 +1,11 @@
 package cvte.service;
 
-import cvte.vo.cvte_user;
+import cvte.vo.CvteUser;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+public interface UserService {
+     boolean  inertUser(CvteUser user);
 
-public interface userService {
-    public boolean  inertUser(cvte_user user);
-
-    public cvte_user getUser(String name,String pwd);
+     CvteUser getUser(String name, String pwd);
 
 
 }

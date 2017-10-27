@@ -1,6 +1,6 @@
 package cvte.vo;
 
-public class cvte_user {
+public class CvteUser {
 
     int id;
     String username;
@@ -12,7 +12,7 @@ public class cvte_user {
 
     @Override
     public String toString() {
-        return "cvte_user{" +
+        return "CvteUser{" +
                 "id=" + id +
                 ", username='" + username + '\'' +
                 ", realname='" + realname + '\'' +
@@ -79,7 +79,7 @@ public class cvte_user {
         this.delete1 = delete1;
     }
 
-    public cvte_user(String username, String realname, String pwd, String phone, int power, int delete1) {
+    public CvteUser(String username, String realname, String pwd, String phone, int power, int delete1) {
 
         this.username = username;
         this.realname = realname;
@@ -89,10 +89,10 @@ public class cvte_user {
         this.delete1 = delete1;
     }
 
-    public cvte_user() {
+    public CvteUser() {
     }
 
-    public cvte_user(int id, String username, String realname, String pwd, String phone, int power, int delete1) {
+    public CvteUser(int id, String username, String realname, String pwd, String phone, int power, int delete1) {
 
         this.id = id;
         this.username = username;

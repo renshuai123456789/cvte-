@@ -1,28 +1,25 @@
 package cvte.service.serviceImp;
 
-import cvte.dao.blackpeopleMapper;
+import cvte.dao.BlackListMapper;
 
 
-import cvte.dao.cvteurlMapper;
-import cvte.service.blackpeopleService;
+import cvte.dao.CvteUrlMapper;
+import cvte.service.BlackListService;
 import cvte.util.JedisPoolUtil;
-import cvte.vo.blackpeople;
+import cvte.vo.BlackList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Service
-public class blackpeopleImp implements blackpeopleService {
+public class BlackListImpl implements BlackListService {
     @Autowired
-    blackpeopleMapper mapper;
+    BlackListMapper mapper;
 
     @Autowired
-    cvteurlMapper urlmapper;
+    CvteUrlMapper urlmapper;
 
     JedisPool pool=JedisPoolUtil.getJedisPoolInstance();
 
@@ -32,21 +29,16 @@ public class blackpeopleImp implements blackpeopleService {
      */
 
     @Override
-    public boolean insertpeople(blackpeople p) {
+    public boolean insertpeople(BlackList p) {
         return false;
     }
 
     @Override
     public boolean getpeople(int id,int rule) {
 
-        blackpeople people=mapper.getPeople(id);
+        BlackList people=mapper.getPeople(id);
         Date startdate=people.getStarttime();
-        Date lasttime=people.getLasttime();
-        Timestamp timp=new Timestamp(startdate.getTime());
         long minute=new Date().getTime()-startdate.getTime();
-        System.err.println("查看是否解禁成功");
-        System.err.println(minute/(1000*60)+"  "+rule+"fadsfdsafdsafdsafdsajfdsajfdsakfsajfjdsalkf");
-
         if(minute/60000>rule)
         {
             return true;
@@ -60,7 +52,7 @@ public class blackpeopleImp implements blackpeopleService {
     获取要加入的黑名单人员信息
      */
     @Override
-    public blackpeople getpeople(int id) {
+    public BlackList getpeople(int id) {
 
         return mapper.getPeople(id);
     }

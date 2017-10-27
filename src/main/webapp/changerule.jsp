@@ -107,55 +107,6 @@
 
         </form>
 
-        <form id="register-form" role="form" class="form-horizontal"
-              method="post"
-              action="/sign.do"
-              align="center">
-
-            <br />
-            <div class="form-group" align="center">
-                <label class="col-sm-2 control-label" for="question">&nbsp;输入时间来看单个人的多少:</label>
-                <div class="col-sm-5">
-                    <input class="form-control" id="urlchange" name="question" value="${rulelooknum}"
-                           placeholder="请输入要更改的数字" />
-                </div>
-            </div>
-            <br />
-            <div class="form-group" align="middle">
-                <div class="col-md-offset-2 col-md-5">
-                    <button type="button"  id="signin1" class="btn btn-success btn-sm">提交</button>
-                    <button type="reset" class="btn btn-info btn-sm">重置</button>
-                </div>
-            </div>
-            <br />
-
-        </form>
-
-        <form id="register-form" role="form" class="form-horizontal"
-              method="post"
-              action="/sign.do"
-              align="center">
-
-            <br />
-            <div class="form-group" align="center">
-                <label class="col-sm-2 control-label" for="question">&nbsp;请输入时间来看一共生成多少短链:</label>
-                <div class="col-sm-5">
-                    <input class="form-control" id="urlchange" name="question" value="${rulelooknum}"
-                           placeholder="请输入要更改的数字" />
-                </div>
-            </div>
-            <br />
-            <div class="form-group" align="middle">
-                <div class="col-md-offset-2 col-md-5">
-                    <button type="button"  id="signin1" class="btn btn-success btn-sm">提交</button>
-                    <button type="reset" class="btn btn-info btn-sm">重置</button>
-                </div>
-            </div>
-            <br />
-
-        </form>
-
-    </div>
 </div>
 <script type="text/javascript">
     $("#signin1").click(function(){

@@ -39,6 +39,7 @@
               <property name="basePackage" value="cvte.dao"></property>
        </bean>
 
+
        <!-- 扫描Service和Dao -->
        <context:component-scan base-package="cvte"></context:component-scan>
 

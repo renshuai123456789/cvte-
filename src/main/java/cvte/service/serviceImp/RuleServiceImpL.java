@@ -1,6 +1,7 @@
 package cvte.service.serviceImp;
 
-import cvte.dao.ruleMapper;
+import cvte.dao.RuleMapper;
+import cvte.service.RuleService;
 import cvte.util.JedisPoolUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -8,46 +9,39 @@ import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 
 @Service
-public class ruleServiceImp {
+public class RuleServiceImpL implements RuleService {
 
     @Autowired
-    ruleMapper rule;
+    RuleMapper rule;
 
     JedisPool pool= JedisPoolUtil.getJedisPoolInstance();
 
-    public boolean changrule(String urlnum,String urltime)
+    public boolean changRule(String urlNum, String urlTime)
     {
 
         Jedis redis=pool.getResource();
-        int i=Integer.parseInt(urltime);
-        int j=Integer.parseInt(urlnum);
+        int i=Integer.parseInt(urlTime);
+        int j=Integer.parseInt(urlNum);
         try
         {
-            redis.set("rulenum",urlnum);
-            redis.set("rulelooknum",urltime);
-            System.err.println(redis.get("rulenum"));
-            System.err.println(redis.get("rulelooknum"));
+            redis.set("rulenum", urlNum);
+            redis.set("rulelooknum", urlTime);
             rule.updateRule2(i,j);
         }catch (Exception e)
         {
             System.out.println(e.getMessage());
         }
 
-        System.out.println(urltime+" "+urlnum);
+
         return true;
     }
 
-    public boolean changrule1(String url)
+    public boolean changRule1(String url)
     {
 
         Jedis j=pool.getResource();
-        System.out.println("开始了");
-        System.err.println(j.get("ruletime"));
         j.set("ruletime",url);
-        System.err.println(j.get("ruletime"));
-        System.out.println("结束了");
         int i=Integer.parseInt(url);
-
         rule.updateRule1(i);
         return true;
     }

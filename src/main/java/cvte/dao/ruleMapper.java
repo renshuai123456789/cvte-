@@ -1,15 +1,15 @@
 package cvte.dao;
 
-import cvte.pojo.cvte_rule;
+import cvte.pojo.CvteRule;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 
 @Service
-public interface ruleMapper {
+public interface RuleMapper {
 
-    public cvte_rule getRule();
+     CvteRule getRule();
 
-    public void updateRule2(@Param("ruletime")int ruletime,@Param("rulenum") int rulenum);
+     void updateRule2(@Param("ruletime")int ruletime,@Param("rulenum") int rulenum);
 
-    public void updateRule1(@Param("rulelooknum") int rulelooknum);
+     void updateRule1(@Param("rulelooknum") int rulelooknum);
 }

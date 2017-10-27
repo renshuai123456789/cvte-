@@ -1,6 +1,6 @@
 package cvte.pojo;
 
-public class cvte_rule {
+public class CvteRule {
 
     int id;
     int ruletime;
@@ -9,7 +9,7 @@ public class cvte_rule {
 
     @Override
     public String toString() {
-        return "cvte_rule{" +
+        return "CvteRule{" +
                 "id=" + id +
                 ", ruletime=" + ruletime +
                 ", rulenum=" + rulenum +
@@ -49,16 +49,16 @@ public class cvte_rule {
         this.rulelooknum = rulelooknum;
     }
 
-    public cvte_rule(int ruletime, int rulenum, int rulelooknum) {
+    public CvteRule(int ruletime, int rulenum, int rulelooknum) {
         this.ruletime = ruletime;
         this.rulenum = rulenum;
         this.rulelooknum = rulelooknum;
     }
 
-    public cvte_rule() {
+    public CvteRule() {
     }
 
-    public cvte_rule(int id, int ruletime, int rulenum, int rulelooknum) {
+    public CvteRule(int id, int ruletime, int rulenum, int rulelooknum) {
 
         this.id = id;
         this.ruletime = ruletime;

@@ -1,11 +1,11 @@
 package cvte.controller;
 
-import cvte.service.serviceImp.ruleServiceImp;
+import cvte.service.RuleService;
+import cvte.service.serviceImp.RuleServiceImpL;
 
 import cvte.util.JedisPoolUtil;
-import cvte.vo.cvte_user;
+import cvte.vo.CvteUser;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.connection.jedis.JedisUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,13 +16,13 @@ import redis.clients.jedis.JedisPool;
 import javax.servlet.http.HttpSession;
 
 @Controller
-public class ruleController {
+public class RuleController {
 
 
 
 
     @Autowired
-    ruleServiceImp rule;
+    RuleService ruleService;
 
     JedisPool pool= JedisPoolUtil.getJedisPoolInstance();
 
@@ -31,7 +31,7 @@ public class ruleController {
     public String change1(String url)
     {
 
-        rule.changrule1(url);
+        ruleService.changRule1(url);
 
 
         return "changerule";
@@ -40,7 +40,7 @@ public class ruleController {
     @RequestMapping(value = "/gotorule.do",method = RequestMethod.GET)
     public String tiaohuzn(HttpSession session, Model map)
     {
-        if(((cvte_user)session.getAttribute("name")).getPower()==1) {
+        if(((CvteUser)session.getAttribute("name")).getPower()==1) {
 
             Jedis redis=pool.getResource();
             map.addAttribute("ruletime",redis.get("ruletime"));
@@ -56,7 +56,7 @@ public class ruleController {
     public String change2(String urltime,String urlnum)
     {
 
-        rule.changrule(urlnum,urltime);
+        ruleService.changRule(urlnum,urltime);
         return "changerule";
     }
 

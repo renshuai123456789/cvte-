@@ -2,7 +2,7 @@ package cvte.changeway;
 
 import java.security.MessageDigest;
 
-public class md5 {
+public class Md5 {
 
     public String changeToMd5(String str) {
         MessageDigest md5 = null;

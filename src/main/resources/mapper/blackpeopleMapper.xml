@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="cvte.dao.blackpeopleMapper" >
+<mapper namespace="cvte.dao.BlackListMapper" >
 
-     <select id="getPeople"  parameterType="int" resultType="cvte.vo.blackpeople">
+     <select id="getPeople"  parameterType="int" resultType="cvte.vo.BlackList">
 
          select * from blackpeople where userid=#{id};
 
      </select>
 
-    <update id="updatePeople" parameterType="cvte.vo.blackpeople" >
+    <update id="updatePeople" parameterType="cvte.vo.BlackList" >
 
         update blackpeople set userid=#{userid},starttime=#{starttime},lasttime=#{lasttime} where userid=#{userid};
 
     </update>
 
-    <insert id="insertPeople" parameterType="cvte.vo.blackpeople" >
+    <insert id="insertPeople" parameterType="cvte.vo.BlackList" >
 
         insert into blackpeople (userid,starttime,lasttime) values (#{userid},#{starttime},#{lasttime});
 

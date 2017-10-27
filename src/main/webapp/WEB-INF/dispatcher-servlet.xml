@@ -51,9 +51,10 @@
             <mvc:mapping path="/**/*.jsp"/><!-- 拦截后缀为.aspx的请求 -->
             <mvc:mapping path="/**/*.do"/><!-- 拦截后缀为 .do的请求 -->
 
-            <bean class="cvte.Handler.userHandler"></bean>
+            <bean class="cvte.Handler.UserHandler"></bean>
         </mvc:interceptor>
     </mvc:interceptors>
+    
 
-
+    <mvc:default-servlet-handler></mvc:default-servlet-handler>
 </beans>
